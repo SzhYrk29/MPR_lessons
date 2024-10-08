@@ -6,7 +6,7 @@ import pl.eu.pjatk.String_Boot.model.Car;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component //każda klasa musze mieć tą adnotację
+@Component //każda klasa musi mieć tą adnotację
 public class CarService {
     List<Car> carList = new ArrayList<>();
 
@@ -26,5 +26,13 @@ public class CarService {
 
     public Car getCar(int id) {
         return this.carList.get(id);
+    }
+
+    public void delete(int id) {
+        this.carList.remove(id);
+    }
+
+    public void edit(int id, Car car) {
+        this.carList.set(id, car);
     }
 }
